@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Đăng ký hội viên</title>
+  </head>
+  <body>
+    <form>
+      <table border="0" cellpadding="5">
+        <tr>
+          <td>Họ và tên:</td>
+          <td><input type="text" name="hoten" /></td>
+        </tr>
+        <tr>
+          <td>Ngày sinh:</td>
+          <td><input type="date" name="ngaysinh" /></td>
+        </tr>
+        <tr>
+          <td>Giới tính:</td>
+          <td>
+            <input type="radio" name="gioitinh" value="nam" /> Nam
+            <input type="radio" name="gioitinh" value="nu" /> Nữ
+          </td>
+        </tr>
+        <tr>
+          <td>Số điện thoại:</td>
+          <td><input type="tel" name="sdt" /></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Tên công ty:</td>
+          <td><input type="text" name="tencongty" /></td>
+        </tr>
+        <tr>
+          <td>Vai trò trong công ty:</td>
+          <td>
+            <select name="vaitro">
+              <option value="ceo">Giám đốc điều hành (CEO)</option>
+              <option value="quanly">Quản lý</option>
+              <option value="nhanvien">Nhân viên</option>
+              <option value="khac">Khác</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Quy mô công ty:</td>
+          <td>
+            <select name="quymo">
+              <option value="nhỏ">Doanh nghiệp nhỏ</option>
+              <option value="vừa">Doanh nghiệp vừa</option>
+              <option value="lớn">Doanh nghiệp lớn</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngành nghề công ty:</td>
+          <td><input type="text" name="nganhnghe" /></td>
+        </tr>
+        <tr>
+          <td>Lý do tham gia câu lạc bộ:</td>
+          <td><textarea name="lydo"></textarea></td>
+        </tr>
+        <tr>
+          <td>Kinh nghiệm lãnh đạo:</td>
+          <td><textarea name="kinhnghiem"></textarea></td>
+        </tr>
+        <tr>
+          <td>Mục tiêu khi tham gia câu lạc bộ:</td>
+          <td><textarea name="muctieu"></textarea></td>
+        </tr>
+        <tr>
+          <td>Chương trình sự kiện mong muốn tham gia:</td>
+          <td>
+            <input type="checkbox" name="sukien" value="networking" />
+            Networking
+            <input type="checkbox" name="sukien" value="workshops" /> Workshops
+            <input type="checkbox" name="sukien" value="hoithao" /> Hội thảo
+          </td>
+        </tr>
+        <tr>
+          <td>Đăng ký nhận bản tin:</td>
+          <td><input type="checkbox" name="bantin" value="co" /> Có</td>
+        </tr>
+        <tr>
+          <td colspan="2" align="">
+            <input type="submit" value="Đăng ký hội viên" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

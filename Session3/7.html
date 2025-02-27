@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Đăng ký học</title>
+  </head>
+  <body>
+    <form>
+      <table border="0" cellpadding="5">
+        <tr>
+          <td>Họ và tên:</td>
+          <td><input type="text" name="hoten" /></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Ngày sinh:</td>
+          <td><input type="date" name="ngaysinh" /></td>
+        </tr>
+        <tr>
+          <td>Giới tính:</td>
+          <td>
+            <input type="radio" name="gioitinh" value="nam" /> Nam
+            <input type="radio" name="gioitinh" value="nu" /> Nữ
+          </td>
+        </tr>
+        <tr>
+          <td>Số điện thoại:</td>
+          <td><input type="tel" name="sdt" /></td>
+        </tr>
+        <tr>
+          <td>Chuyên ngành:</td>
+          <td><input type="text" name="chuyennganh" /></td>
+        </tr>
+        <tr>
+          <td>Năm nhập học:</td>
+          <td><input type="number" name="namnhaphoc" /></td>
+        </tr>
+        <tr>
+          <td>Điểm GPA:</td>
+          <td><input type="number" name="gpa" step="0.1" /></td>
+        </tr>
+        <tr>
+          <td>Địa chỉ:</td>
+          <td><textarea name="diachi"></textarea></td>
+        </tr>
+        <tr>
+          <td>Lớp học:</td>
+          <td>
+            <select name="lophoc">
+              <option value="lop1">Lớp 1</option>
+              <option value="lop2">Lớp 2</option>
+              <option value="lop3">Lớp 3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Ngày đăng ký học:</td>
+          <td><input type="datetime-local" name="ngaydk" /></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Gửi thông tin" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
