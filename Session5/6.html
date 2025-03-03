@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Center Align Text</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 600px;
+        margin: 20px auto;
+      }
+      .header {
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .example {
+        padding: 20px;
+        border: 3px solid green;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .code-block {
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+      }
+      .code-block::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: rgb(0, 255, 0);
+      }
+      .try-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Center Align Text</h2>
+        <p>
+          To just center the text inside an element, use
+          <code
+            style="
+              border: 1px solid white;
+              background-color: #d8dbd9;
+              color: red;
+            "
+            >text-align: center;</code
+          >
+        </p>
+      </div>
+
+      <div class="example">
+        <p>This text is centered.</p>
+      </div>
+
+      <div style="background-color: #d8dbd9; padding: 10px">
+        <h2>Example</h2>
+        <div class="code-block" style="width: 90%; margin: 0 auto">
+          <p>.center { text-align: center; border: 3px solid green; }</p>
+        </div>
+
+        <button class="try-button">Try it Yourself &raquo;</button>
+      </div>
+    </div>
+  </body>
+</html>
