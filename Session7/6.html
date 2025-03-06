@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .accordion-item {
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+      }
+
+      .accordion-title {
+        background-color: #f0f0f0;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        display: block; /* Thêm dòng này để label chiếm toàn bộ chiều rộng */
+      }
+
+      .accordion-title::after {
+        content: "+";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .accordion-content {
+        padding: 10px;
+        display: none;
+      }
+
+      .accordion-toggle {
+        display: none;
+      }
+
+      .accordion-toggle:checked + .accordion-title::after {
+        content: "-";
+      }
+      .accordion-toggle:checked + .accordion-title {
+        background-color: aqua;
+      }
+
+      .accordion-toggle:checked + .accordion-title + .accordion-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-item">
+        <input type="checkbox" id="item1" class="accordion-toggle" />
+        <label for="item1" class="accordion-title">Mục 1</label>
+        <div class="accordion-content">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+            ratione?
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="item2" class="accordion-toggle" />
+        <label for="item2" class="accordion-title">Mục 2</label>
+        <div class="accordion-content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi,
+            eveniet.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="item3" class="accordion-toggle" />
+        <label for="item3" class="accordion-title">Mục 3</label>
+        <div class="accordion-content">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+            molestias libero. Similique earum, doloremque pariatur
+            exercitationem porro neque illo enim.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

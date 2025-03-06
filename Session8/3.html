@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        position: relative;
+        display: inline-block;
+      }
+      h1::after {
+        content: "";
+        width: 100%; /* Chiều dài bằng h1 */
+        height: 3px; /* Độ dày gạch */
+        background: #e0400b; /* Màu xanh Mãi Đỉnh */
+        position: absolute;
+        left: 0; /* Nằm từ mép trái */
+        bottom: -10px; /* Cách chữ 10px */
+      }
+      .row {
+        display: flex;
+      }
+      .col-4 {
+        width: 33.33%;
+        text-align: left;
+        border-right: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      p {
+        width: 300px;
+      }
+      button {
+        width: 100px;
+        padding: 20px 10px;
+        border: 1px solid rgb(219, 23, 23);
+        border-radius: 10px;
+      }
+      .border-hiden {
+        border-right: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lorem, ipsum dolor.</h1>
+      <div class="row">
+        <div class="col-4">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+            alt=""
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            nulla dolor odit quisquam natus, ipsum libero debitis delectus odio
+            necessitatibus animi excepturi rerum sit dolorem incidunt, maiores
+            fuga corporis? Voluptas!
+          </p>
+          <button>MORE</button>
+        </div>
+        <div class="col-4">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+            alt=""
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            nulla dolor odit quisquam natus, ipsum libero debitis delectus odio
+            necessitatibus animi excepturi rerum sit dolorem incidunt, maiores
+            fuga corporis? Voluptas!
+          </p>
+          <button>MORE</button>
+        </div>
+        <div class="col-4 border-hiden">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+            alt=""
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            nulla dolor odit quisquam natus, ipsum libero debitis delectus odio
+            necessitatibus animi excepturi rerum sit dolorem incidunt, maiores
+            fuga corporis? Voluptas!
+          </p>
+          <button>MORE</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

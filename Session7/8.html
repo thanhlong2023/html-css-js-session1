@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự án</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+      }
+
+      .project-title {
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+      }
+
+      .inactive-badge {
+        background-color: #ffc107;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      .project-info {
+        margin-top: 20px;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .info-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      .progress-bar {
+        margin-top: 20px;
+      }
+
+      .progress-container {
+        background-color: #e6bc7e;
+        border-radius: 10px;
+        height: 10px;
+        margin-top: 5px;
+        position: relative;
+      }
+
+      .progress-fill {
+        background-color: #ff9800;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .progress-container span {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+      }
+
+      .project-dates {
+        margin-top: 20px;
+        font-size: 0.9em;
+      }
+
+      .project-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .team-members {
+        display: flex;
+      }
+
+      .member-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      .task-count {
+        font-size: 0.9em;
+      }
+    </style>
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="project-card">
+      <h2 class="project-title">Water resistant mosquito...</h2>
+      <span class="inactive-badge">INACTIVE</span>
+      <div class="project-info">
+        <div class="info-item">
+          <i class="fa fa-user"></i>
+          <span>Client:</span> Monsters.Inc
+        </div>
+        <div class="info-item">
+          <i class="fa fa-credit-card"></i>
+          <span>Budget:</span> 10,500$
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div style="display: flex; justify-content: space-between">
+          <p>Progress</p>
+          <p>76%</p>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-fill" style="width: 76%"></div>
+        </div>
+      </div>
+      <div class="project-dates">
+        <p>Started: 8th Mar. 2021</p>
+        <p>Deadline: 15th Sept. 2022</p>
+      </div>
+      <div class="project-footer">
+        <div class="team-members">
+          <img
+            src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAEn_G6oXupfZm_rbl4V2UC1rm47dTwZ3Kw&s"
+            alt="Member 1"
+            class="member-avatar"
+          />
+          <img
+            src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAEn_G6oXupfZm_rbl4V2UC1rm47dTwZ3Kw&s"
+            alt="Member 2"
+            class="member-avatar"
+          />
+        </div>
+        <span class="task-count">125 Task</span>
+      </div>
+    </div>
+  </body>
+</html>

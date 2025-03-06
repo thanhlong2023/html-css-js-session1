@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal CSS (không JS)</title>
+    <style>
+      .modal-toggle {
+        display: none;
+      }
+
+      .open-modal-button {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none; /* Ẩn modal mặc định */
+      }
+
+      .modal-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #888;
+      }
+
+      .modal-toggle:checked + .modal {
+        display: block;
+      }
+      label {
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="modal-toggle" class="open-modal-button">Mở Modal</label>
+    <input type="checkbox" id="modal-toggle" class="modal-toggle" />
+
+    <div class="modal">
+      <label for="modal-toggle" class="modal-bg"></label>
+      <div class="modal-content">
+        <label for="modal-toggle" class="modal-close">&times;</label>
+        <p>New message to @mdo</p>
+        <br />
+        <hr />
+        <div class="form-control">
+          <label for="">Recipient:</label><br />
+          <input type="text" />
+        </div>
+        <div class="form-control">
+          <label for="">Message:</label><br />
+          <textarea name="" id=""></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
