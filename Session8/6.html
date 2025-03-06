@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Search Bar</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        width: 600px;
+        height: 50px;
+        border: 1px solid #dfe1e5;
+        border-radius: 25px;
+        background-color: white;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        padding: 0 15px;
+      }
+      .search-bar input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 10px;
+      }
+      .search-bar input::placeholder {
+        color: #9aa0a6;
+      }
+      .search-bar img {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-bar">
+      <input type="text" placeholder="Nhập từ khóa tìm kiếm" />
+      <img src="./mic.svg" alt="Voice Search" />
+      <img src="./camera.svg" alt="Google Lens" />
+    </div>
+  </body>
+</html>
