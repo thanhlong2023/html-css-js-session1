@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        background-color: #039be5; /* Màu xanh dương */
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header h2 {
+        font-weight: bold;
+      }
+      .header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .container {
+        padding: 20px;
+        background: #f1f3f4;
+        min-height: 100vh;
+      }
+      .tabs {
+        display: flex;
+        gap: 20px;
+      }
+      .tabs span {
+        color: #ffffff;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .search {
+        display: flex;
+        justify-content: space-between;
+        background: rgb(205, 205, 205);
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        align-items: center;
+      }
+      .search input {
+        width: 80%;
+        padding: 8px;
+        border: none;
+        outline: none;
+        background: rgb(205, 205, 205);
+      }
+      .add-user {
+        background: #039be5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .empty {
+        text-align: center;
+        background-color: white;
+        color: #757575;
+        font-weight: bold;
+        padding: 50px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <h2>Authentication</h2>
+        <div class="tabs">
+          <span>Users</span>
+          <span>Sign-in method</span>
+          <span>Templates</span>
+          <span>Usage</span>
+        </div>
+      </div>
+      <div>
+        <div class="flex">
+          <a href="#">Go to docs</a>
+          <i class="fa fa-bell" style="margin: 0 10px"></i>
+          <img
+            src="https://randomuser.me/api/portraits/women/45.jpg"
+            alt="User"
+          />
+        </div>
+
+        <div>
+          <button
+            style="
+              border: none;
+              padding: 5px;
+              background-color: #039be5;
+              border: 1px solid white;
+              color: white;
+              border-radius: 5px;
+            "
+          >
+            Web setup
+          </button>
+          <i
+            class="fa fa-question"
+            style="
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              text-align: center;
+              border-radius: 50%;
+              background-color: white;
+              color: #039be5;
+            "
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input
+          type="text"
+          placeholder="Search by email address, phone number or user UID"
+        />
+        <button class="add-user">Add user</button>
+        <i class="fa fa-arrow-left"></i>
+      </div>
+
+      <div class="empty">No users for this project yet</div>
+    </div>
+  </body>
+</html>

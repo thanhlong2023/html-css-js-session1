@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bố cục khối</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+      .block {
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 5px;
+        color: white;
+      }
+      .col-2 {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="block">1</div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+      <div class="block">4</div>
+      <div class="block col-2">5</div>
+      <div class="block">6</div>
+      <div class="block">7</div>
+    </div>
+  </body>
+</html>
