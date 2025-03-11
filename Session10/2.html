@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .title {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+        flex: 1;
+      }
+      .grid-item img {
+        flex: 2;
+        width: 100%;
+      }
+      .title.zoom {
+        background-color: red;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid">
+        <div class="grid-item">
+          <div class="title"><h3>Fooball</h3></div>
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+            alt=""
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+            alt=""
+          />
+          <div class="title zoom"><h3>Fooball</h3></div>
+        </div>
+        <div class="grid-item">
+          <div class="title"><h3>Fooball</h3></div>
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+            alt=""
+          />
+        </div>
+        <div class="grid-item">
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+            alt=""
+          />
+          <div class="title"><h3>Fooball</h3></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport News Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 15px 50px;
+      }
+
+      .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      .navbar .menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+      }
+
+      .menu li a:hover,
+      .menu .active a {
+        font-weight: bold;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background-color: #ccc;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .search-box input {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 5px;
+      }
+
+      .search-box button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Sport News</div>
+      <ul class="menu">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Category</a></li>
+        <li><a href="#">Trending News</a></li>
+        <li><a href="#">Recent News</a></li>
+        <li><a href="#">Clubs Ranking</a></li>
+        <li><a href="#">Sports Article</a></li>
+      </ul>
+      <div class="search-box">
+        <button>🔍</button>
+        <input type="text" placeholder="Search" />
+      </div>
+    </nav>
+  </body>
+</html>

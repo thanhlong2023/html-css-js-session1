@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Portal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        margin: auto;
+      }
+      .navbar {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .sidebar {
+        display: flex;
+      }
+      .navbar a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .content {
+        display: flex;
+        margin-top: 20px;
+      }
+      .main-news {
+        width: 50%;
+        margin-right: 20px;
+      }
+      .main-news img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .main-news h2 {
+        font-size: 20px;
+      }
+      .sidebar {
+        width: 50%;
+      }
+      .top-stories,
+      .quick-bites {
+        background: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 15px;
+        flex: 1;
+      }
+      .top-stories h3,
+      .quick-bites h3 {
+        background: yellow;
+        padding: 5px;
+        font-size: 16px;
+      }
+      .top-stories ul,
+      .quick-bites ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .top-stories li,
+      .quick-bites p {
+        padding: 5px 0;
+      }
+      .signup-box {
+        background: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+      }
+      .signup-box input {
+        padding: 5px;
+        width: 70%;
+        margin: 5px 0;
+      }
+      .signup-box button {
+        background: blue;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <a href="#">World</a>
+        <a href="#">Politics</a>
+        <a href="#">Business</a>
+        <a href="#">Opinion</a>
+        <a href="#">Tech</a>
+        <a href="#">Science</a>
+        <a href="#">Health</a>
+        <a href="#">Sports</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Travel</a>
+      </div>
+      <div class="content">
+        <div class="main-news">
+          <img
+            style="width: 95%"
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+            alt=""
+          />
+          <h2>What One Photo Tells Us About North Korea’s Nuclear Program</h2>
+          <p>
+            Clues from a propaganda photo reveal details about North Korea’s
+            expanding weapons programs and internal politics.
+          </p>
+        </div>
+        <div class="sidebar">
+          <div class="top-stories">
+            <h3>TOP STORIES</h3>
+            <ul>
+              <li>PM unveils Shiva statue in Coimbatore on Mahashivratri</li>
+              <li>PM Modi: Kanpur train accident was a conspiracy</li>
+              <li>‘Sena, BJP have no option but to join hands again’</li>
+              <li>Thousands bid adieu to martyred jawan in Kashmir</li>
+              <li>Jayalalithaa’s niece Deepa floats political outfit</li>
+              <li>‘China made mistake of ignoring India’s talent’</li>
+            </ul>
+          </div>
+          <div class="quick-bites">
+            <h3>QUICK BITES</h3>
+            <p>
+              <strong
+                >Stocks Sell Off, Gold Rises Ahead of Trump Speech: Markets
+                Wrap</strong
+              >
+            </p>
+            <p>
+              Global stocks retreated, erasing gains for the week as a glum set
+              of European corporate earnings compounded investor nervousness
+              before a major speech from U.S. President Donald Trump.
+            </p>
+            <div class="signup-box">
+              <p>
+                <strong
+                  >Get the Quick Bites delivered to your inbox daily</strong
+                >
+              </p>
+              <input type="email" placeholder="Enter your email" />
+              <button>Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

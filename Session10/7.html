@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News & Club Ranking</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .news-section,
+      .ranking-section {
+        width: 48%;
+      }
+      .news-section img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .news-list {
+        margin-top: 10px;
+      }
+      .news-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .news-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .ranking-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .ranking-table th,
+      .ranking-table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      .ranking-table th {
+        background: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h2>Recent News</h2>
+        <img
+          style="width: 95%"
+          src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+          alt=""
+        />
+      </div>
+      <div class="news-section">
+        <div class="news-list">
+          <div class="news-item">
+            <img
+              src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+              alt=""
+            />
+            <p>
+              <strong>#Polar 87 - 12 July 2023</strong><br />Baku 2023 Taekwondo
+              Championships
+            </p>
+          </div>
+          <div class="news-item">
+            <img
+              src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+              alt=""
+            />
+            <p>
+              <strong>#Golf - 20 July 2023</strong><br />Open Championship Royal
+              Liverpool Golf
+            </p>
+          </div>
+          <div class="news-item">
+            <img
+              src="https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg"
+              alt=""
+            />
+            <p>
+              <strong>#Cricket, Toni - 27 July 2023</strong><br />Ireland Tour
+              of England Test 2023
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="ranking-section">
+        <h2>Clubs Ranking</h2>
+        <table class="ranking-table">
+          <tr>
+            <th>Club</th>
+            <th>GP</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>F</th>
+            <th>A</th>
+            <th>GD</th>
+          </tr>
+          <tr>
+            <td>Manchester City</td>
+            <td>38</td>
+            <td>29</td>
+            <td>6</td>
+            <td>3</td>
+            <td>99</td>
+            <td>26</td>
+            <td>73</td>
+          </tr>
+          <tr>
+            <td>Liverpool</td>
+            <td>38</td>
+            <td>28</td>
+            <td>8</td>
+            <td>2</td>
+            <td>94</td>
+            <td>26</td>
+            <td>68</td>
+          </tr>
+          <tr>
+            <td>Chelsea</td>
+            <td>38</td>
+            <td>21</td>
+            <td>11</td>
+            <td>6</td>
+            <td>76</td>
+            <td>33</td>
+            <td>43</td>
+          </tr>
+          <tr>
+            <td>Tottenham Hotspur</td>
+            <td>38</td>
+            <td>21</td>
+            <td>6</td>
+            <td>11</td>
+            <td>69</td>
+            <td>40</td>
+            <td>29</td>
+          </tr>
+          <tr>
+            <td>Arsenal</td>
+            <td>38</td>
+            <td>22</td>
+            <td>3</td>
+            <td>13</td>
+            <td>77</td>
+            <td>43</td>
+            <td>34</td>
+          </tr>
+          <tr>
+            <td>Manchester United</td>
+            <td>38</td>
+            <td>16</td>
+            <td>10</td>
+            <td>12</td>
+            <td>57</td>
+            <td>57</td>
+            <td>0</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

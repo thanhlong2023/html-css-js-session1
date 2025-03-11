@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messi News</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .news-item {
+        position: relative;
+
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        color: #fff;
+      }
+
+      .category {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .news-content {
+        padding: 20px;
+        background-image: url("https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg");
+        background-size: cover;
+      }
+
+      .news-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .news-meta {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .news-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .news-content p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .pagination {
+        text-align: right;
+        margin-top: 20px;
+      }
+
+      .pagination a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin: 0 5px;
+        background-color: #ddd;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .pagination a.active {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .pagination .arrow {
+        background-color: #ccc;
+      }
+      .news-item {
+        position: relative; /* Cần để các phần tử con có thể sử dụng position tuyệt đối */
+        color: white; /* Đảm bảo chữ có màu trắng */
+      }
+
+      .news-content {
+        position: relative;
+        padding: 20px;
+        background-image: url("https://assets.adidas.com/images/w_600,f_auto,q_auto/9a44621a281149709ca4ae420163c466_9366/Bong_All_Court_3.0_trai_cam_HM4975_01_standard.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .news-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0; /* Lớp phủ nằm dưới */
+      }
+
+      .overlay {
+        position: relative;
+        z-index: 1; /* Đưa chữ lên trên overlay */
+      }
+
+      .category {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .news-meta {
+        font-size: 14px;
+        margin-bottom: 10px;
+        opacity: 0.9;
+      }
+
+      .news-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Tạo bóng cho chữ dễ đọc hơn */
+      }
+
+      .news-content p {
+        font-size: 16px;
+        line-height: 1.5;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="news-item">
+        <div class="news-content">
+          <div class="overlay">
+            <div class="category">Football</div>
+            <div class="news-meta">Agence France-Presse - 04 June 2023</div>
+            <h2>
+              LIONEL MESSI LEAVING LIGUE 1 TEAM<br />PARIS SAINT-GERMAIN, CLUB
+              CONFIRMS
+            </h2>
+            <p>
+              The EuroLeague Finals Top Scorer is the individual award for the
+              player that gained the highest points in the EuroLeague Finals.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <a href="#" class="arrow">&larr;</a>
+        <a href="#" class="page active">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="arrow">&rarr;</a>
+      </div>
+    </div>
+  </body>
+</html>
