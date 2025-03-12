@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .main {
+        display: flex;
+        min-height: 100vh;
+      }
+      .sider1,
+      .sider2 {
+        flex: 1;
+        background-color: #ccc;
+      }
+      .content {
+        flex: 2;
+        background-color: #ef7934;
+      }
+      header,
+      footer {
+        padding: 100px;
+      }
+      @media (max-width: 1024px) {
+        .main {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <div class="main">
+      <div class="sider1">Left</div>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+          odit in nobis corrupti ex voluptatum maxime consectetur vero magni
+          consequuntur dolore incidunt animi totam minus reiciendis, ratione sit
+          atque omnis molestiae error! Molestiae quod reiciendis ad dignissimos.
+          Dolores numquam tempora voluptatum aliquid voluptate aliquam officia
+          nam, officiis assumenda iste qui exercitationem minus eveniet labore.
+          Vel animi assumenda magni sed natus temporibus adipisci laudantium
+          unde atque iure repudiandae blanditiis quibusdam veritatis nam, saepe
+          amet nesciunt autem et dolorem nostrum sint maxime minima quia?
+          Numquam itaque cum in corrupti molestiae placeat facere totam iusto
+          necessitatibus, expedita pariatur perspiciatis eligendi veniam soluta
+          doloremque.
+        </p>
+      </div>
+      <div class="sider2">Right</div>
+    </div>
+    <footer>Footer</footer>
+  </body>
+</html>

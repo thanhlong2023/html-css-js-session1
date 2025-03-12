@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 95%;
+        margin: 0 auto;
+      }
+      .wrapper {
+        max-width: 1024px;
+        margin: 0 auto;
+        border: 3px solid black;
+      }
+      header {
+        padding: 50px;
+        background-color: aqua;
+        margin: 30px 0;
+      }
+      .left,
+      .right,
+      .item {
+        padding: 50px;
+      }
+      .left {
+        background-color: blue;
+        width: 49%;
+      }
+      .right {
+        background-color: brown;
+        width: 49%;
+      }
+      .item:first-child {
+        background-color: chartreuse;
+        width: 32%;
+      }
+      .item:nth-child(2) {
+        background-color: chocolate;
+        width: 32%;
+      }
+      .item:nth-child(3) {
+        background-color: darkblue;
+        width: 32%;
+      }
+      .box-tow {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box-three {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 1024px) {
+        header {
+          margin: 5px 0;
+        }
+        .box-tow,
+        .box-three {
+          flex-direction: column;
+          margin: 5px;
+        }
+        .left {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+        .right {
+          width: 100%;
+        }
+        .item:first-child {
+          width: 100%;
+        }
+        .item:nth-child(2) {
+          width: 100%;
+          margin: 5px 0;
+        }
+        .item:nth-child(3) {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header></header>
+        <div class="box-tow">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <header></header>
+        <div class="box-three">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
