@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+
+    <!-- font  -->
+    <link rel="preconnect" href="https://stijndv.com" />
+    <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css" />
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- main css  -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Eudoxus Sans", sans-serif;
+        background-color: #ffffff;
+      }
+      html {
+        font-size: 18px;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .container {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 100px;
+      }
+      header .navbar {
+        height: 120px;
+        border-bottom: 2px solid #f3f3f3;
+      }
+      header .container-fluid {
+        display: flex;
+        justify-content: space-between;
+      }
+      header .navbar-collapse ul {
+        margin: 0 auto;
+      }
+      header .navbar-collapse ul li {
+        margin: 0 30px;
+      }
+      header .navbar-collapse ul li a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 180%;
+        letter-spacing: 0%;
+      }
+      header .cart {
+        display: flex;
+        gap: 24px;
+      }
+      /* discover------------------------------------------------------------------------------------------------------------- */
+      .discover .container {
+        text-align: center;
+      }
+      .discover-top-title {
+        position: relative;
+        width: 724px;
+        height: 166px;
+        margin: 0 auto;
+      }
+      .discover-top-title img {
+        position: absolute;
+        right: 13px;
+        bottom: 37px;
+      }
+      .discover-top-title h1 {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 130%;
+      }
+      .discover-top-para {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .discover-top-para img {
+        position: absolute;
+      }
+      .discover-top-para p {
+        width: 796px;
+        height: 96px;
+        font-size: 18px;
+        line-height: 180%;
+        font-weight: 500;
+        margin: 0 auto;
+      }
+      .discover-bottom {
+        position: relative;
+      }
+      .discover-bottom .search {
+        width: 810px;
+        height: 84px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 4px 80px 0px #afadb533;
+        position: absolute;
+        background-color: white;
+
+        top: -42px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .discover-bottom .search img {
+        margin-left: 26px;
+        margin-right: 18px;
+      }
+      .discover-bottom .search input {
+        height: auto;
+        width: 100%;
+        border: none;
+        font-size: 18px;
+      }
+      .discover-bottom .search button {
+        width: 170px;
+        height: 54px;
+        background: #518581;
+        color: white;
+        border: none;
+        margin-right: 15px;
+      }
+      /* .benefits---------------------------------------------------------------------------------------------------------------------------------- */
+      .benefits-top {
+        display: flex;
+        justify-content: space-between;
+      }
+      .benefits-top .item-left h5 {
+        font-size: 18px;
+        color: #ffb23f;
+      }
+      .benefits-top .item-left h2 {
+        font-size: 44px;
+        line-height: 130%;
+        color: #151411;
+      }
+      .benefits-top .item-left {
+        width: 427px;
+      }
+      .benefits-top .item-right p {
+        line-height: 180%;
+        font-weight: 500px;
+        width: 505px;
+      }
+      .benefits-bottom .row {
+        gap: 29px;
+      }
+      .benefits-bottom .col-4 {
+        width: 394px;
+        height: 285px;
+        padding: 26px 24px;
+        box-shadow: 0px 4px 100px 0px #afadb51a;
+      }
+      .benefits-bottom .icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .benefits-bottom h3 {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="logo" href="#">
+              <img src="./1img/header/logo.png" alt="logo" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Product</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Article</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="cart">
+              <a href="#">
+                <img src="./1img/header/bag-2.png" alt="cart" />
+              </a>
+              <a href="#">
+                <img src="./1img/header/user.png" alt="user" />
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="discover">
+        <div class="container">
+          <div class="discover-top">
+            <div class="discover-top-title">
+              <h1>Discover Furniture With High Quality Wood</h1>
+              <img
+                src="./1img/discover/Sketch-annotation-element-stroke-abstract-stars-plus-wink-filled.png"
+                alt="star"
+              />
+            </div>
+            <div class="discover-top-para">
+              <img
+                src="./1img/discover/Sketch-annotation-element-stroke-line-arrow-spiral-down-5.png"
+                alt=""
+              />
+              <p>
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+                dignissim placerat nisi, adipiscing mauris non. Purus parturient
+                viverra nunc, tortor sit laoreet. Quam tincidunt aliquam
+                adipiscing tempor.
+              </p>
+            </div>
+          </div>
+          <div class="discover-bottom">
+            <div class="search">
+              <img src="./1img/discover/search-normal.png" alt="" />
+              <input type="text" placeholder="Search property" />
+              <button>Search</button>
+            </div>
+            <div class="discover-img">
+              <img src="./1img/discover/Rectangle 2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="benefits container">
+        <div class="benefits-top">
+          <div class="item-left">
+            <h5>Benefits</h5>
+            <h2>Benefits when using our services</h2>
+          </div>
+          <div class="item-right">
+            <p>
+              Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+              dignissim placerat nisi, adipiscing mauris non purus parturient.
+            </p>
+          </div>
+        </div>
+        <div class="benefits-bottom">
+          <div class="row">
+            <div class="col-4">
+              <div class="icon">
+                <img src="./1img/benifits/3square.png" alt="" />
+              </div>
+              <h3>Many Choices</h3>
+              <p>
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+                dignissim placerat nisi, adipiscing mauris non.
+              </p>
+            </div>
+            <div class="col-4">
+              <div class="icon">
+                <img src="./1img/benifits/calendar-tick.png" alt="" />
+              </div>
+              <h3>Fast and On Time</h3>
+              <p>
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+                dignissim placerat nisi, adipiscing mauris non.
+              </p>
+            </div>
+            <div class="col-4">
+              <div class="icon">
+                <img src="./1img/benifits/money-tick.png" alt="" />
+              </div>
+              <h3>Affordable Price</h3>
+              <p>
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+                dignissim placerat nisi, adipiscing mauris non.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <setion class="product"> </setion>
+      <section class="Testimonials"></section>
+      <section class="Articles"></section>
+      <footer></footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
