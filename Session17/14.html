@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập vào bán kính và chiều cao
+      let radius = parseFloat(prompt("Nhập vào bán kính (r):"));
+      let height = parseFloat(prompt("Nhập vào chiều cao (h):"));
+
+      // Tính diện tích xung quanh (2 * π * r * h)
+      let lateralSurfaceArea = 2 * Math.PI * radius * height;
+      alert(
+        `Diện tích xung quanh là: ${lateralSurfaceArea.toFixed(
+          2
+        )} đơn vị diện tích`
+      );
+
+      // Tính diện tích toàn phần (2 * π * r * (r + h))
+      let totalSurfaceArea = 2 * Math.PI * radius * (radius + height);
+      alert(
+        `Diện tích toàn phần là: ${totalSurfaceArea.toFixed(
+          2
+        )} đơn vị diện tích`
+      );
+
+      // Tính thể tích hình trụ (π * r^2 * h)
+      let volume = Math.PI * Math.pow(radius, 2) * height;
+      alert(`Thể tích hình trụ là: ${volume.toFixed(2)} đơn vị thể tích`);
+
+      // Tính chu vi đáy (2 * π * r)
+      let baseCircumference = 2 * Math.PI * radius;
+      alert(`Chu vi đáy là: ${baseCircumference.toFixed(2)} đơn vị chiều dài`);
+    </script>
+  </body>
+</html>

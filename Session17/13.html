@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập vào số tiền gửi
+      let principal = parseFloat(prompt("Nhập vào số tiền gửi (VND):"));
+
+      // Nhập vào số tháng gửi
+      let months = parseInt(prompt("Nhập vào số tháng gửi:"));
+
+      // Lãi suất 4.3% / năm
+      let annualInterestRate = 4.3;
+
+      // Tính lãi suất theo tháng
+      let monthlyInterestRate = annualInterestRate / 12 / 100;
+
+      // Tính số tiền lãi
+      let interest = principal * monthlyInterestRate * months;
+
+      // Hiển thị kết quả
+      alert(
+        `Số tiền lãi nhận được sau ${months} tháng là: ${interest.toFixed(
+          2
+        )} VND`
+      );
+    </script>
+  </body>
+</html>

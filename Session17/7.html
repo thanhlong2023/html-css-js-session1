@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         Viết một chương trình yêu cầu người dùng nhập vào một số, sau đó hiển thị số đó dưới dạng tiền tệ VNĐ
+      // Input: 1000000
+      // Output: “1.000.000 VNĐ”
+      // Tìm hiểu về phương thức toLocaleString()
+      let number = parseInt(prompt("Enter a number"));
+      let result = number.toLocaleString("vi", {
+        style: "currency",
+        currency: "VND",
+      });
+      alert(result);
+    </script>
+  </body>
+</html>

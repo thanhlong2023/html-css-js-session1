@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập vào 3 giá trị a, b, c
+      let a = parseFloat(prompt("Nhập giá trị a:"));
+      let b = parseFloat(prompt("Nhập giá trị b:"));
+      let c = parseFloat(prompt("Nhập giá trị c:"));
+
+      // Tính delta
+      let delta = b * b - 4 * a * c;
+
+      if (delta < 0) {
+        alert("Phương trình vô nghiệm");
+      } else if (delta === 0) {
+        let x = -b / (2 * a);
+        alert(`Phương trình có nghiệm kép: x = ${x}`);
+      } else {
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        alert(`Phương trình có hai nghiệm: x1 = ${x1}, x2 = ${x2}`);
+      }
+    </script>
+  </body>
+</html>

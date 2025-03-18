@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập vào bán kính của hình cầu
+      let radius = parseFloat(prompt("Nhập vào bán kính của hình cầu (r):"));
+
+      // Tính thể tích hình cầu (4/3 * π * r^3)
+      let volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+      alert(`Thể tích hình cầu là: ${volume.toFixed(2)} đơn vị thể tích`);
+
+      // Tính diện tích bề mặt hình cầu (4 * π * r^2)
+      let surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+      alert(
+        `Diện tích bề mặt hình cầu là: ${surfaceArea.toFixed(
+          2
+        )} đơn vị diện tích`
+      );
+
+      // Tính chu vi lớn nhất của hình cầu (2 * π * r)
+      let circumference = 2 * Math.PI * radius;
+      alert(
+        `Chu vi lớn nhất của hình cầu là: ${circumference.toFixed(
+          2
+        )} đơn vị chiều dài`
+      );
+    </script>
+  </body>
+</html>

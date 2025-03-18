@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Viết một chương trình nhập vào hai ngày bất kỳ và tính số ngày chênh lệch giữa chúng. Yêu cầu ngày phải nhập dưới định dạng YYYY-MM-DD
+      // Input:
+      // - 2025-02-26
+      // - 2025-02-28
+      // Output: Độ lệch là 2 ngày
+      // Tìm hiểu về new Date()
+
+      let date1 = new Date(prompt("Nhập ngày đầu tiên (YYYY-MM-DD):"));
+      let date2 = new Date(prompt("Nhập ngày thứ hai (YYYY-MM-DD):"));
+
+      // Tính số ngày chênh lệch
+      let timeDifference = Math.abs(date2 - date1);
+      let dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+      alert(`Độ lệch là ${dayDifference} ngày`);
+    </script>
+  </body>
+</html>

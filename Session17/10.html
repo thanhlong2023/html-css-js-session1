@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập vào một số n
+      let n = parseInt(prompt("Nhập vào một số:"));
+
+      // Kiểm tra xem n có phải là số chính phương hay không
+      let isPerfectSquare = Number.isInteger(Math.sqrt(n));
+
+      // Sử dụng toán tử 3 ngôi để hiển thị kết quả
+      let result = isPerfectSquare
+        ? `${n} là số chính phương`
+        : `${n} không phải số chính phương`;
+
+      alert(result);
+    </script>
+  </body>
+</html>
