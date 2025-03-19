@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra đăng nhập</title>
+  </head>
+  <body>
+    <script>
+      let username = prompt("Nhập tên người dùng:");
+
+      if (username === "ADMIN") {
+        let password = prompt("Nhập mật khẩu:");
+
+        if (password === "TheMaster") {
+          console.log("Welcome");
+        } else if (password === null) {
+          console.log("Cancelled");
+        } else {
+          console.log("Wrong password");
+        }
+      } else if (username === null) {
+        console.log("Cancelled");
+      } else {
+        console.log("I Don’t know you");
+      }
+    </script>
+  </body>
+</html>

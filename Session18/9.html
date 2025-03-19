@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi định dạng thời gian</title>
+  </head>
+  <body>
+    <script>
+      let hours = parseInt(prompt("Nhập giờ (0-23):"));
+      let minutes = parseInt(prompt("Nhập phút (0-59):"));
+      let seconds = parseInt(prompt("Nhập giây (0-59):"));
+
+      if (
+        hours >= 0 &&
+        hours <= 23 &&
+        minutes >= 0 &&
+        minutes <= 59 &&
+        seconds >= 0 &&
+        seconds <= 59
+      ) {
+        let period = hours >= 12 ? "PM" : "AM";
+        hours = hours % 12;
+        if (hours === 0) {
+          hours = 12;
+        }
+        let formattedTime =
+          hours.toString().padStart(2, "0") +
+          ":" +
+          minutes.toString().padStart(2, "0") +
+          ":" +
+          seconds.toString().padStart(2, "0") +
+          " " +
+          period;
+        console.log("Thời gian chuyển đổi: " + formattedTime);
+      } else {
+        console.log("Thời gian không hợp lệ");
+      }
+    </script>
+  </body>
+</html>

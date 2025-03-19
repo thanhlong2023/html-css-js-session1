@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi số thành chữ</title>
+  </head>
+  <body>
+    <script>
+      function numberToWords(num) {
+        const ones = [
+          "",
+          "Một",
+          "Hai",
+          "Ba",
+          "Bốn",
+          "Năm",
+          "Sáu",
+          "Bảy",
+          "Tám",
+          "Chín",
+        ];
+        const tens = [
+          "",
+          "Mười",
+          "Hai mươi",
+          "Ba mươi",
+          "Bốn mươi",
+          "Năm mươi",
+          "Sáu mươi",
+          "Bảy mươi",
+          "Tám mươi",
+          "Chín mươi",
+        ];
+        const teens = [
+          "Mười",
+          "Mười một",
+          "Mười hai",
+          "Mười ba",
+          "Mười bốn",
+          "Mười lăm",
+          "Mười sáu",
+          "Mười bảy",
+          "Mười tám",
+          "Mười chín",
+        ];
+
+        if (num === 0) return "Không";
+
+        let words = "";
+
+        if (Math.floor(num / 100) > 0) {
+          words += ones[Math.floor(num / 100)] + " trăm ";
+          num %= 100;
+        }
+
+        if (num > 0) {
+          if (num < 10) {
+            words += ones[num];
+          } else if (num < 20) {
+            words += teens[num - 10];
+          } else {
+            words += tens[Math.floor(num / 10)];
+            if (num % 10 > 0) {
+              words += " " + ones[num % 10];
+            }
+          }
+        }
+
+        return words.trim();
+      }
+
+      let number = parseInt(prompt("Nhập một số nguyên từ 0 đến 999:"));
+
+      if (number >= 0 && number <= 999) {
+        console.log("Số " + number + " đọc là: " + numberToWords(number));
+      } else {
+        console.log("Số không hợp lệ");
+      }
+    </script>
+  </body>
+</html>

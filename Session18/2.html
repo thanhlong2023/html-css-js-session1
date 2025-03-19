@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính điểm trung bình và xếp loại học lực</title>
+  </head>
+  <body>
+    <script>
+      let toan = parseFloat(prompt("Nhập điểm Toán: "));
+      let van = parseFloat(prompt("Nhập điểm Văn: "));
+      let anh = parseFloat(prompt("Nhập điểm Anh: "));
+
+      let diemTrungBinh = (toan + van + anh) / 3;
+      console.log("Điểm trung bình: " + diemTrungBinh.toFixed(2));
+
+      if (diemTrungBinh >= 8.0) {
+        console.log("Xếp loại: Giỏi");
+      } else if (diemTrungBinh >= 6.5) {
+        console.log("Xếp loại: Khá");
+      } else if (diemTrungBinh >= 5.0) {
+        console.log("Xếp loại: Trung bình");
+      } else {
+        console.log("Xếp loại: Yếu");
+      }
+    </script>
+  </body>
+</html>
