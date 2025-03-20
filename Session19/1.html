@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Viết chương trình nhập vào một tháng và in ra số ngày của tháng đó.3. Đánh giá
+
+      let month = parseInt(prompt("Nhap thang"));
+      let year = parseInt(prompt("Nhap nam"));
+      let day = 0;
+      switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          day = 31;
+          break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          day = 30;
+          break;
+        case 2:
+          if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            day = 29;
+          } else {
+            day = 28;
+          }
+          break;
+        default:
+          alert("Tháng không hợp lệ");
+          break;
+      }
+      alert(`Tháng ${month} có ${day} ngày`);
+    </script>
+  </body>
+</html>

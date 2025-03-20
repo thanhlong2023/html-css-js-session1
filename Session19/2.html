@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkCharacters(inputString) {
+        for (let i = 0; i < inputString.length; i++) {
+          const inputChar = inputString[i];
+          if (/^[a-zA-Z]$/.test(inputChar)) {
+            console.log(`${inputChar} là chữ cái.`);
+          } else {
+            console.log(`${inputChar} không phải là chữ cái.`);
+          }
+        }
+      }
+
+      // Ví dụ sử dụng
+      const inputString = prompt("Nhập một chuỗi ký tự:");
+      checkCharacters(inputString);
+    </script>
+  </body>
+</html>
