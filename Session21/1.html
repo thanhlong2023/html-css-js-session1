@@ -1,0 +1,20 @@
+<script>
+  // Yêu cầu người dùng nhập vào 5 số nguyên
+  let numbers = [];
+  for (let i = 0; i < 5; i++) {
+    let input = parseInt(prompt(`Nhập số nguyên thứ ${i + 1}:`), 10);
+    numbers.push(input);
+  }
+
+  // Tính tổng các số lẻ
+  let oddSum = numbers.reduce((sum, num) => {
+    if (num % 2 !== 0) {
+      return sum + num;
+    }
+    return sum;
+  }, 0);
+
+  // In kết quả ra màn hình
+  console.log(`Tổng các số lẻ là: ${oddSum}`);
+  alert(`Tổng các số lẻ là: ${oddSum}`);
+</script>

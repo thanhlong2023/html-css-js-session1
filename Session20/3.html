@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = prompt("Nhập vào một chuỗi số nguyên:");
+      function isPalindrome(num) {
+        let str = num.toString();
+        let reversedStr = str.split("").reverse().join("");
+        return str === reversedStr;
+      }
+
+      if (isPalindrome(number)) {
+        console.log(`${number} là số đối xứng.`);
+      } else {
+        console.log(`${number} không phải là số đối xứng.`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<script>
+  // Yêu cầu người dùng nhập vào 5 số nguyên
+  let numbers = [];
+  for (let i = 0; i < 5; i++) {
+    let input = parseInt(prompt(`Nhập số nguyên thứ ${i + 1}:`), 10);
+    numbers.push(input);
+  }
+
+  // Đếm số lượng số chẵn và số lẻ
+  let evenCount = 0;
+  let oddCount = 0;
+
+  numbers.forEach((num) => {
+    if (num % 2 === 0) {
+      evenCount++;
+    } else {
+      oddCount++;
+    }
+  });
+
+  // In kết quả ra màn hình
+  console.log(`Số lượng số chẵn: ${evenCount}`);
+  console.log(`Số lượng số lẻ: ${oddCount}`);
+  alert(`Số lượng số chẵn: ${evenCount}\nSố lượng số lẻ: ${oddCount}`);
+</script>

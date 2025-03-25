@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      let n = prompt("Nhập vào số lượng số nguyên tố cần hiển thị:");
+      n = parseInt(n);
+
+      if (isNaN(n) || n <= 0) {
+        console.log("Không hợp lệ");
+      } else {
+        let primes = [];
+        let num = 2; // Bắt đầu kiểm tra từ số 2
+        while (primes.length < n) {
+          if (isPrime(num)) {
+            primes.push(num);
+          }
+          num++;
+        }
+        console.log(`Các số nguyên tố đầu tiên: ${primes.join(" ")}`);
+      }
+    </script>
+  </body>
+</html>
