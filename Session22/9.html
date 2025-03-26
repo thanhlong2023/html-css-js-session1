@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicates and Sort</title>
+  </head>
+  <body>
+    <script>
+      // Khai báo mảng số nguyên gồm 10 phần tử
+      let arr = [1, 2, 3, 4, 2, 13, 4, 2, 3, 4, 2, 4, 6];
+
+      console.log("Mảng ban đầu:", arr);
+
+      // Loại bỏ các phần tử trùng nhau bằng Set
+      let uniqueArr = [...new Set(arr)];
+
+      // Sắp xếp mảng theo thứ tự tăng dần
+      uniqueArr.sort((a, b) => a - b);
+
+      // Hiển thị kết quả
+      console.log(
+        "Mảng sau khi loại bỏ phần tử trùng nhau và sắp xếp:",
+        uniqueArr
+      );
+    </script>
+  </body>
+</html>

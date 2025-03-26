@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Menu</title>
+  </head>
+  <body>
+    <script>
+      let arr = []; // Khởi tạo mảng rỗng
+
+      function showMenu() {
+        return prompt(
+          `MENU\n\n` +
+            `1. Nhập vào mảng\n` +
+            `2. Hiển thị mảng\n` +
+            `3. Thêm phần tử\n` +
+            `4. Sửa phần tử\n` +
+            `5. Xóa phần tử\n` +
+            `6. Thoát\n\n` +
+            `Lựa chọn của bạn: `
+        );
+      }
+
+      function main() {
+        let choice;
+        do {
+          choice = showMenu();
+          switch (choice) {
+            case "1": // Nhập vào mảng
+              let input = prompt(
+                "Nhập các phần tử của mảng, cách nhau bằng dấu phẩy (,):"
+              );
+              arr = input.split(",").map((item) => item.trim());
+              alert("Mảng đã được nhập!");
+              break;
+
+            case "2": // Hiển thị mảng
+              alert("Mảng hiện tại: " + arr.join(", "));
+              break;
+
+            case "3": // Thêm phần tử
+              let newElement = prompt("Nhập phần tử muốn thêm:");
+              arr.push(newElement);
+              alert("Đã thêm phần tử!");
+              break;
+
+            case "4": // Sửa phần tử
+              let indexToEdit = parseInt(
+                prompt("Nhập vị trí phần tử muốn sửa (bắt đầu từ 0):")
+              );
+              if (indexToEdit >= 0 && indexToEdit < arr.length) {
+                let newValue = prompt("Nhập giá trị mới:");
+                arr[indexToEdit] = newValue;
+                alert("Đã sửa phần tử!");
+              } else {
+                alert("Vị trí không hợp lệ!");
+              }
+              break;
+
+            case "5": // Xóa phần tử
+              let indexToDelete = parseInt(
+                prompt("Nhập vị trí phần tử muốn xóa (bắt đầu từ 0):")
+              );
+              if (indexToDelete >= 0 && indexToDelete < arr.length) {
+                arr.splice(indexToDelete, 1);
+                alert("Đã xóa phần tử!");
+              } else {
+                alert("Vị trí không hợp lệ!");
+              }
+              break;
+
+            case "6": // Thoát
+              alert("Chương trình kết thúc!");
+              break;
+
+            default:
+              alert("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+          }
+        } while (choice !== "6");
+      }
+
+      main(); // Chạy chương trình
+    </script>
+  </body>
+</html>

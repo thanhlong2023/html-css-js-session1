@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      for (let i = 0; i < 5; i++) {
+        //ngẫu nhiên 5 số
+        let number = Math.floor(Math.random() * 10);
+        arr.push(number);
+      }
+      console.log(arr);
+      let tongChan = arr.reduce((total, number) => {
+        if (number % 2 === 0) {
+          return total + number;
+        }
+        return total;
+      }, 0);
+      console.log("Tổng số chẵn: ", tongChan);
+      let tongLe = arr.reduce((total, number) => {
+        if (number % 2 !== 0) {
+          return total + number;
+        }
+        return total;
+      }, 0);
+      console.log("Tổng số lẻ: ", tongLe);
+    </script>
+  </body>
+</html>
