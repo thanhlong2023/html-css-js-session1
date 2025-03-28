@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let products = [
+        ["mì tôm", 5, 5000],
+        ["bánh mì", 12, 15000],
+        ["bánh bao", 5, 8000],
+        ["mèn mén", 30, 20000],
+      ];
+
+      let cart = [];
+
+      function showProducts() {
+        let message = "Danh sách sản phẩm:\n";
+        for (let p of products) {
+          message += `${p[0]} - SL: ${p[1]} - Giá: ${p[2]}đ\n`;
+        }
+        alert(message);
+      }
+
+      function findProductByName(name) {
+        return products.find((p) => p[0].toLowerCase() === name.toLowerCase());
+      }
+
+      function addToCart(productName) {
+        let product = findProductByName(productName);
+        if (!product) {
+          alert("Sản phẩm không có trong cửa hàng.");
+          return;
+        }
+
+        if (product[1] <= 0) {
+          alert("Sản phẩm đã hết hàng.");
+          return;
+        }
+
+        // Trừ số lượng
+        product[1]--;
+
+        // Thêm vào giỏ hoặc tăng số lượng nếu đã có
+        let cartItem = cart.find((item) => item[0] === product[0]);
+        if (cartItem) {
+          cartItem[1]++;
+        } else {
+          cart.push([product[0], 1, product[2]]);
+        }
+
+        alert(`Đã thêm 1 ${product[0]} vào giỏ hàng.`);
+      }
+
+      function showCart() {
+        if (cart.length === 0) {
+          alert("Giỏ hàng trống.");
+          return;
+        }
+
+        let message = "Giỏ hàng của bạn:\n";
+        let total = 0;
+        for (let item of cart) {
+          let subTotal = item[1] * item[2];
+          message += `${item[0]} - SL: ${item[1]} - Giá: ${item[2]}đ - Thành tiền: ${subTotal}đ\n`;
+          total += subTotal;
+        }
+        message += `Tổng cộng: ${total}đ`;
+        alert(message);
+      }
+
+      // Chạy chương trình
+      while (true) {
+        let choice = prompt(
+          "Chọn chức năng:\n1. Xem sản phẩm\n2. Mua hàng\n3. Xem giỏ hàng\n4. Thoát"
+        );
+
+        if (choice === "1") {
+          showProducts();
+        } else if (choice === "2") {
+          let name = prompt("Nhập tên sản phẩm muốn mua:");
+          if (name) addToCart(name);
+        } else if (choice === "3") {
+          showCart();
+        } else if (choice === "4") {
+          alert("Cảm ơn bạn đã ghé cửa hàng!");
+          break;
+        } else {
+          alert("Lựa chọn không hợp lệ.");
+        }
+      }
+    </script>
+  </body>
+</html>
