@@ -3,9 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Quản lý nhân viên</title>
   </head>
   <body>
-    <script src="./8.js"></script>
+    <h1>Quản lý nhân viên</h1>
+    <button onclick="main()">Hiển thị Menu</button>
+    <div id="output"></div>
+
+    <script>
+      const employees = []; // Mảng lưu trữ danh sách nhân viên
+
+      function showMenu() {
+        return prompt(
+          `MENU\n\n` +
+            `1. Thêm nhân viên mới\n` +
+            `2. Xóa nhân viên theo ID\n` +
+            `3. Cập nhật mức lương theo ID\n` +
+            `4. Tìm kiếm nhân viên theo tên\n` +
+            `5. Hiển thị danh sách nhân viên\n` +
+            `6. Thoát\n\n` +
+            `Lựa chọn của bạn: `
+        );
+      }
+
+      function addEmployee() {
+        const id = prompt("Nhập ID nhân viên:");
+        const name = prompt("Nhập tên nhân viên:");
+        const position = prompt("Nhập vị trí công việc:");
+        const salary = parseFloat(prompt("Nhập mức lương:"));
+        employees.push({ id, name, position, salary });
+        alert("Đã thêm nhân viên thành công!");
+        displayEmployees(); // Hiển thị danh sách sau khi thêm
+      }
+
+      function deleteEmployee() {
+        const id = prompt("Nhập ID nhân viên cần xóa:");
+        const index = employees.findIndex((emp) => emp.id === id);
+        if (index !== -1) {
+          const confirmDelete = confirm(
+            `Bạn có chắc chắn muốn xóa nhân viên có ID: ${id}?`
+          );
+          if (confirmDelete) {
+            employees.splice(index, 1);
+            alert("Đã xóa nhân viên thành công!");
+            displayEmployees(); // Hiển thị danh sách sau khi xóa
+          }
+        } else {
+          alert("Không tìm thấy nhân viên có ID này!");
+        }
+      }
+
+      function updateSalary() {
+        const id = prompt("Nhập ID nhân viên cần cập nhật lương:");
+        const employee = employees.find((emp) => emp.id === id);
+        if (employee) {
+          const newSalary = parseFloat(
+            prompt(`Nhập mức lương mới cho nhân viên ${employee.name}:`)
+          );
+          employee.salary = newSalary;
+          alert("Đã cập nhật mức lương thành công!");
+          displayEmployees(); // Hiển thị danh sách sau khi cập nhật
+        } else {
+          alert("Không tìm thấy nhân viên có ID này!");
+        }
+      }
+
+      function searchEmployeeByName() {
+        const name = prompt("Nhập tên nhân viên cần tìm:");
+        const results = employees.filter((emp) =>
+          emp.name.toLowerCase().includes(name.toLowerCase())
+        );
+        if (results.length > 0) {
+          displayEmployees(results); // Hiển thị kết quả tìm kiếm
+        } else {
+          alert("Không tìm thấy nhân viên nào với tên này!");
+        }
+      }
+
+      function displayEmployees(list = employees) {
+        const output = document.getElementById("output");
+        if (list.length > 0) {
+          let html =
+            "<table border='1'><tr><th>ID</th><th>Tên</th><th>Vị trí</th><th>Lương</th></tr>";
+          list.forEach((emp) => {
+            html += `<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.position}</td><td>${emp.salary}</td></tr>`;
+          });
+          html += "</table>";
+          output.innerHTML = html;
+        } else {
+          output.innerHTML = "<p>Danh sách nhân viên trống!</p>";
+        }
+      }
+
+      function main() {
+        let choice;
+        do {
+          choice = showMenu();
+          switch (choice) {
+            case "1":
+              addEmployee();
+              break;
+            case "2":
+              deleteEmployee();
+              break;
+            case "3":
+              updateSalary();
+              break;
+            case "4":
+              searchEmployeeByName();
+              break;
+            case "5":
+              displayEmployees();
+              break;
+            case "6":
+              alert("Chương trình kết thúc!");
+              break;
+            default:
+              alert("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+          }
+        } while (choice !== "6");
+      }
+    </script>
   </body>
 </html>
