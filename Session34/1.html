@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required />
+      </div>
+      <div class="form-control">
+        <label for="Password">Password</label>
+        <input type="text" id="Password" name="Password" required />
+      </div>
+      <div class="form-control">
+        <label for="Confirm">=Confirm Password</label>
+        <input type="text" id="Confirm" name="Confirm" required />
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const email = document.querySelector("#email");
+      const Password = document.querySelector("#Password");
+      const Confirm = document.querySelector("#Confirm");
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+      const confirmRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!emailRegex.test(email.value)) {
+          alert("Invalid email format");
+          return;
+        }
+        if (!passwordRegex.test(Password.value)) {
+          alert(
+            "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number."
+          );
+          return;
+        }
+        if (Password.value !== Confirm.value) {
+          alert("Passwords do not match");
+          return;
+        }
+        //lưu tài khoản vào local storage
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        const newAccount = {
+          email: email.value,
+          Password: Password.value,
+          Confirm: Confirm.value,
+        };
+        accounts.push(newAccount);
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+        alert("Form submitted successfully!");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .search-bar {
+        margin-bottom: 20px;
+      }
+      .search-bar input {
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .course-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      .course-table th,
+      .course-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+      .course-table th {
+        background-color: #f4f4f4;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .pagination button {
+        padding: 10px 15px;
+        margin: 0 5px;
+        border: 1px solid #ccc;
+        background-color: #f4f4f4;
+        cursor: pointer;
+      }
+      .pagination button.active {
+        background-color: #007bff;
+        color: white;
+      }
+      .pagination button:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Course List</h1>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-name"
+          placeholder="Search by name"
+          onchange="searchCourses()"
+        />
+        <input
+          type="text"
+          id="search-status"
+          placeholder="Search by status"
+          onchange="searchCourses()"
+        />
+        <input
+          type="date"
+          id="search-date"
+          placeholder="Search by start date"
+          onchange="searchCourses()"
+        />
+      </div>
+      <table class="course-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Start Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="course-list"></tbody>
+      </table>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+      const coursesPerPage = 5;
+      let courses = JSON.parse(localStorage.getItem("courses")) || [];
+      let currentPage = 1;
+
+      const renderCourses = (filteredCourses = courses) => {
+        const courseList = document.getElementById("course-list");
+        const pagination = document.getElementById("pagination");
+        courseList.innerHTML = "";
+        pagination.innerHTML = "";
+
+        const start = (currentPage - 1) * coursesPerPage;
+        const end = start + coursesPerPage;
+        const paginatedCourses = filteredCourses.slice(start, end);
+
+        paginatedCourses.forEach((course, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td contenteditable="true" class="editable">${course.name}</td>
+            <td>${course.status}</td>
+            <td>${course.startDate}</td>
+            <td>
+              <button onclick="deleteCourse(${start + index})">Delete</button>
+            </td>
+          `;
+
+          // Add event listener for editing course name
+          row.querySelector(".editable").addEventListener("blur", (e) => {
+            const newName = e.target.textContent.trim();
+            if (newName) {
+              courses[start + index].name = newName; // Update course name
+              saveCourses(); // Save to localStorage
+            } else {
+              e.target.textContent = courses[start + index].name; // Revert to old name
+              alert("Course name cannot be empty!");
+            }
+          });
+
+          courseList.appendChild(row);
+        });
+
+        const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.className = i === currentPage ? "active" : "";
+          button.addEventListener("click", () => {
+            currentPage = i;
+            renderCourses(filteredCourses);
+          });
+          pagination.appendChild(button);
+        }
+      };
+
+      const saveCourses = () => {
+        localStorage.setItem("courses", JSON.stringify(courses));
+      };
+
+      const deleteCourse = (index) => {
+        courses.splice(index, 1);
+        saveCourses();
+        renderCourses();
+      };
+
+      const searchCourses = () => {
+        const name = document.getElementById("search-name").value.toLowerCase();
+        const status = document
+          .getElementById("search-status")
+          .value.toLowerCase();
+        const date = document.getElementById("search-date").value;
+
+        const filteredCourses = courses.filter((course) => {
+          return (
+            (!name || course.name.toLowerCase().includes(name)) &&
+            (!status || course.status.toLowerCase().includes(status)) &&
+            (!date || course.startDate === date)
+          );
+        });
+
+        currentPage = 1;
+        renderCourses(filteredCourses);
+      };
+
+      // Initialize with some sample data
+      if (courses.length === 0) {
+        courses = [
+          { name: "HTML Basics", status: "Active", startDate: "2025-04-01" },
+          {
+            name: "CSS Fundamentals",
+            status: "Completed",
+            startDate: "2025-03-15",
+          },
+          {
+            name: "JavaScript Essentials",
+            status: "Active",
+            startDate: "2025-04-10",
+          },
+          { name: "React Basics", status: "Planned", startDate: "2025-05-01" },
+          { name: "Node.js Intro", status: "Active", startDate: "2025-04-20" },
+          {
+            name: "Python for Beginners",
+            status: "Completed",
+            startDate: "2025-03-01",
+          },
+          {
+            name: "Data Structures",
+            status: "Planned",
+            startDate: "2025-06-01",
+          },
+        ];
+        saveCourses();
+      }
+
+      renderCourses();
+    </script>
+  </body>
+</html>

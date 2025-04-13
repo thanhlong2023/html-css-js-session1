@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required />
+      </div>
+      <div class="form-control">
+        <label for="Password">Password</label>
+        <input type="text" id="Password" name="Password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const email = document.querySelector("#email");
+      const Password = document.querySelector("#Password");
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!emailRegex.test(email.value)) {
+          alert("Invalid email format");
+          return;
+        }
+        if (!passwordRegex.test(Password.value)) {
+          alert(
+            "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number."
+          );
+          return;
+        }
+        //đăng nhập thành công với admin 123
+        if (email.value === "admin" && Password.value === "123") {
+          alert("Login successful!");
+          window.location.href = "1.html"; // Redirect to 1.html
+        } else {
+          alert("Invalid email or password");
+        }
+        //lưu tài khoản vào local storage
+        const accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+        const newAccount = {
+          email: email.value,
+          Password: Password.value,
+        };
+        accounts.push(newAccount);
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+      });
+    </script>
+  </body>
+</html>
